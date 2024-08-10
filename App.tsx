@@ -22,6 +22,7 @@ export default function App() {
       onPressIn={() => console.log('1. onPressIn triggered')} // acontece antes do onPress
       onPressOut={() => console.log('3. onPressOut triggered')} // acontece depois do onPress
       onLongPress={() => console.log('2. onLongPress triggered')}
+      onTextLayout={() => console.log('Text loaded and drawn')} // acontece quando a tag é desenhada na tela
       >Main Component</Text>
     </View>
   );
