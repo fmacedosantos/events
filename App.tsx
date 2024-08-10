@@ -13,10 +13,15 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Text onPress={() => console.log('inline')}>Inline</Text>
+      {/* <Text onPress={() => console.log('inline')}>Inline</Text>
       <Text onPress={handlerFunction}>Handler Function</Text>
       <Text onPress={() => handlerFunctionWithParameters(1)}>Handler Function with Parameters</Text>
-      <Text onPress={handlerAnotherFile}>Another File</Text>
+      <Text onPress={handlerAnotherFile}>Another File</Text> */}
+      <Text style={{fontSize: 32}}
+      onPress={() => console.log('2. onPress triggered')}
+      onPressIn={() => console.log('1. onPressIn triggered')} // acontece antes do onPress
+      onPressOut={() => console.log('3. onPressOut triggered')} // acontece depois do onPress
+      >Main Component</Text>
     </View>
   );
 }
