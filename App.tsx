@@ -21,6 +21,7 @@ export default function App() {
       onPress={() => console.log('2. onPress triggered')}
       onPressIn={() => console.log('1. onPressIn triggered')} // acontece antes do onPress
       onPressOut={() => console.log('3. onPressOut triggered')} // acontece depois do onPress
+      onLongPress={() => console.log('2. onLongPress triggered')}
       >Main Component</Text>
     </View>
   );
