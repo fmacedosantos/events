@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { handlerAnotherFile } from './src/actions';
 
 export default function App() {
@@ -17,7 +17,12 @@ export default function App() {
       <Text onPress={handlerFunction}>Handler Function</Text>
       <Text onPress={() => handlerFunctionWithParameters(1)}>Handler Function with Parameters</Text>
       <Text onPress={handlerAnotherFile}>Another File</Text> */}
-      <Text style={{fontSize: 32}}
+      <TextInput style={styles.input} placeholder='Digite alguma coisa'
+      onChange={() => {console.log('1. onChange triggered')}}
+      onChangeText={() => {console.log('2. onChangeText triggered')}}
+      onFocus={() => {console.log('onFocus triggered')}}
+      />
+      <Text style={styles.button}
       onPress={() => console.log('2. onPress triggered')}
       onPressIn={() => console.log('1. onPressIn triggered')} // acontece antes do onPress
       onPressOut={() => console.log('3. onPressOut triggered')} // acontece depois do onPress
@@ -35,4 +40,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    fontSize: 30,
+    backgroundColor: 'blue',
+    color: 'white', 
+    borderWidth: 2,
+    borderRadius: 15,
+    marginTop: 15,
+    paddingVertical: 5,
+    paddingHorizontal: 10
+  },
+  input: {
+    padding: 5,
+    borderWidth: 1,
+    borderRadius: 5,
+    width: '60%',
+    fontSize: 17,
+    borderColor: 'black'
+  }
 });
